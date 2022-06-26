@@ -58,20 +58,25 @@
                     <h3 class="devInfo__title">Skills</h3>
                     <div class="devInfo__skills">
 
-                        {% for skill in topSkills %}
+                        {% for skill in skills %}
+                        {% if skill.description %}
                         <div class="devSkill">
                             <h4 class="devSkill__title">{{skill.name}}</h4>
                             <p class="devSkill__info">{{skill.description}}</p>
                         </div>
+                        {% endif %}
                         {% endfor %}
 
                         <h3 class="devInfo__subtitle">Other Skills</h3>
                         <div class="devInfo__otherSkills">
 
-                            {% for skill in otherSkills %}
+                            {% for skill in skills %}
+                            {% if skill.description %}
+                            {% else %}
                             <span class="tag tag--pill tag--sub tag--lg">
                                 <small>{{skill.name}}</small>
                             </span>
+                            {% endif %}
                             {% endfor %}
 
                         </div>

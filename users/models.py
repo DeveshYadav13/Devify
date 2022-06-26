@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save,post_delete
 import uuid
 
-# Create your models here.
+# Create your models here.'
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE , null=True, blank=True)
@@ -35,19 +35,3 @@ class Skill(models.Model):
     def __str__(self):
         return str(self.name)
 
-def createProfile(sender, instance, created, **kwargs):
-    print('Profile Saved!')
-    if created: 
-        user = instance
-        profile = Profile.objects.create(
-            user = user,
-            username = user.username,
-            email = user.email,
-            name = user.first_name,
-        )
-    
-def deleteUser(sender,instance, **kwargs):
-    print('DELETING USER....')
-
-post_save.connect(createProfile,sender=Profile)
-post_delete.connect(deleteUser,sender=Profile)
