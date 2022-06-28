@@ -63,7 +63,7 @@ def registerUser(request):
 def profiles(request):
     profiles,search_query = searchProfiles(request)
 
-    custom_range,profiles = paginateprofiles(request,profiles,1)
+    custom_range,profiles = paginateprofiles(request,profiles,3)
     
     context = {'profiles':profiles,'search_query':search_query}
     return render(request,'users/profiles.html',context)
