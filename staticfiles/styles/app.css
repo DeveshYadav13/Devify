@@ -26,6 +26,7 @@ img {
   margin: 0 auto;
 }
 
+
 /*=======================
   Header Section
 ========================*/
@@ -46,14 +47,14 @@ img {
   color: var(--color-light);
   font-family: 'Cormorant Garamond', serif;
   font-weight: bold;
-  font-size: 3.2rem;
+  font-size: 3rem;
 }
 
 .header__nav > ul {
   display: inline-flex;
   align-items: center;
   list-style: none;
-  gap: 5rem;
+  gap: 4.7rem;
 }
 
 .header__menuItem > a {
@@ -79,7 +80,7 @@ img {
   object-fit: cover;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   .header__logo {
     position: relative;
     z-index: 999;
