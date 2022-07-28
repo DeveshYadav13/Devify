@@ -1,6 +1,4 @@
-from turtle import left, right
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
 from .models import Project,Tag
 from .forms import ProjectForm,ReviewForm
 from django.contrib.auth.decorators import login_required
