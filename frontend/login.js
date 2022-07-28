@@ -17,7 +17,6 @@ form.addEventListener('submit', (e) => {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('DATA:', data.access)
             if (data.access) {
                 localStorage.setItem('token', data.access)
                 window.location = 'file:///C:/Users/DELL/OneDrive/Desktop/devsearch/frontend/projects-list.html'

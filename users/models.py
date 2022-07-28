@@ -23,10 +23,19 @@ class Profile(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True , primary_key=True, editable=False)
 
     class Meta:
-        ordering = ['name']
+        ordering = ['name','-created']
 
     def __str__(self):
         return str(self.username)
+    
+    
+    @property
+    def imageURL(self):
+        try:
+            url = self.profile_image.url
+        except:
+            url = ''
+        return url
 
 class Skill(models.Model):
     owner = models.ForeignKey(Profile,on_delete=models.CASCADE , null=True, blank=True )

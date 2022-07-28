@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ie_(sglrjh5i7*h=_*38c_e1^#nnr0%g%775oxcr10-q%i_oyw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','devify1.herokuapp.com']
 
 
 # Application definition
@@ -125,10 +125,21 @@ WSGI_APPLICATION = 'devsearch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'deg02rk5p1e518',
+        'USER': 'yfemvwnubdjlne',
+        'PASSWORD' : '70d46f38da3914c5f1a7ac0a906353ad73704f2d6420829680e22953b8c5e49a',
+        'HOST' : 'ec2-107-22-122-106.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -187,3 +198,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if os.getcwd() == '/app':
+    DEBUG = False

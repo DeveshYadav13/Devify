@@ -23,7 +23,6 @@ let getProjects = () => {
     fetch(projectsUrl)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             buildProjects(data)
         })
 
@@ -64,7 +63,6 @@ let addVoteEvents = () => {
 
     for (let i = 0; voteBtns.length > i; i++) {
         voteBtns[i].addEventListener('click', (e) => {
-            console.log('TOKEN:', token)
             let vote = e.target.dataset.vote
             let project = e.target.dataset.project
 
@@ -78,7 +76,6 @@ let addVoteEvents = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data)
                     getProjects()
                 })
 
